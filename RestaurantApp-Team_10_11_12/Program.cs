@@ -70,8 +70,52 @@ namespace RestaurantApp_Team_10_11_12
         // คน C รับผิดชอบ
         static void ShowSummary()
         {
-            Console.WriteLine("Not completed");
-        }
+            Console.WriteLine("\n===== Restaurant Summary =====");
+
+
+            int total = restaurants.Count;
+            double sum = 0;
+
+
+            Restaurant highest = restaurants[0];
+            Restaurant lowest = restaurants[0];
+
+
+            foreach (Restaurant r in restaurants)
+            {
+                sum += r.Rating;
+
+
+                if (r.Rating > highest.Rating)
+                {
+                    highest = r;
+                }
+
+
+                if (r.Rating < lowest.Rating)
+                {
+                    lowest = r;
+                }
+            }
+
+
+            double average = sum / total;
+
+
+            Console.WriteLine("Total Restaurants: " + total);
+            Console.WriteLine("Average Rating: " + average.ToString("F2"));
+
+
+            Console.WriteLine("\nHighest Rating:");
+            Console.WriteLine("Name: " + highest.Name);
+            Console.WriteLine("Rating: " + highest.Rating);
+
+
+            Console.WriteLine("\nLowest Rating:");
+            Console.WriteLine("Name: " + lowest.Name);
+            Console.WriteLine("Rating: " + lowest.Rating);
+         }
     }
+    
 
 }
