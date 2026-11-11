@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace RestaurantApp_Team_10_11_12
 {
@@ -19,7 +20,11 @@ namespace RestaurantApp_Team_10_11_12
     {
         new Restaurant { Name = "KFC", Type = "Fast Food", Rating = 4.2 },
         new Restaurant { Name = "MK", Type = "Suki", Rating = 4.7 },
-        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 }
+        new Restaurant { Name = "Fuji", Type = "Japanese", Rating = 4.8 },
+        new Restaurant { Name = "hachiban", Type = "Fast Casual", Rating = 4.1 },
+        new Restaurant { Name = "McDonald", Type = "Fast Food", Rating = 4.8 },
+        new Restaurant { Name = "Teenoi", Type = "Casual Dining", Rating = 4.8 }
+
     };
 
         static void Main(string[] args)
@@ -58,7 +63,15 @@ namespace RestaurantApp_Team_10_11_12
         // คน A รับผิดชอบ
         static void AddRestaurant()
         {
-            Console.WriteLine("Not completed");
+            Console.WriteLine("\n===== All Restaurant List =====");
+
+            foreach (Restaurant r in restaurants)
+            {
+                Console.WriteLine("Name: " + r.Name);
+                Console.WriteLine("Type: " + r.Type);
+                Console.WriteLine("Rating: " + r.Rating);
+                Console.WriteLine("-------------------------");
+            }
         }
 
         // คน B รับผิดชอบ
